@@ -1,0 +1,102 @@
+/* 
+Name: Carol Freitas
+Date: 29/07/2020
+Description: CSS of index.html
+*/
+
+** {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Poppins-Regular, sans-serif;
+}
+
+input {
+    outline: none;
+    border: none;
+    display: block;
+}
+
+input:valid, select:valid, option:valid {
+    border-color: #71C155;
+}
+
+input:hover, select:hover, option:hover {
+    border-color: #71C155;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #71C155;
+}
+
+.form-container {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-top: 45px;
+    height: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.form-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-control select {
+    width: 100%;
+    /* padding: 12px 20px; */
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.info-campo {
+    padding-bottom: 20px;
+}
+
+.info-campo button[type="submit"] {
+    background: #71C155 !important;
+    border: 0 !important;
+    padding: 10px 35px !important;
+    color: #fff !important;
+    transition: 0.4s !important;
+    border-radius: 15px !important;
+    float: right;
+}
+
+table {
+    margin-top: 50px;
+    text-align: center;
+    background-color: #71C155 !important;
+    color: #fff !important;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+td {
+    background-color: #f2f2f2 !important;
+    color: black !important;
+}
+
+.dados-user th {
+    padding: 10px !important;
+    width: 500px !important;
+}
+
+@media (max-width: 600px) {
+    .info-campo button[type="submit"] {
+        position: relative;
+        left: 0;
+    }
+}

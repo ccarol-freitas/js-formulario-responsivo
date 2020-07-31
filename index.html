@@ -1,0 +1,120 @@
+<!-- Name: Carol Freitas
+Date: 29/07/2020
+Description: CSS of index.html -->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Link CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Link JavaScript -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/validacaoCampos.js"></script>
+
+
+    <!-- Link Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <title>Teste Plataforma Verde</title>
+</head>
+
+<body>
+    <div class="container form-container">
+        <h2 class="text-center"> <img src="img/green.png" alt="" class="img-fluid" alt="Responsive image"
+                style="width: 80px;">Plataforma Verde</h2>
+
+        <form id="formulario">
+            <div class="info-campo">
+                <label for="name">Nome Completo</label>
+                <input class="form-control" id="nome" type="text" name="txtNome" placeholder="Informe seu nome..."
+                    minlength="5" maxlength="25" required />
+            </div>
+
+            <div class="info-campo">
+                <label for="age">Idade</label>
+                <input class="form-control" id="idade" type="number" name="txtIdade" placeholder="Informe sua idade..."
+                    min="18" max="90" required>
+            </div>
+
+            <div class="info-campo">
+                <label for="estado">Estado</label>
+                <select class="form-control" id="estado" name="txtEstado" onchange="listarCidades(this.value)" required>
+                    <option value="">Selecione o estado</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SC">Santa Catarina</option>
+                </select>
+            </div>
+
+            <div class="info-campo">
+                <label for="cidade">Cidade</label>
+                <select class="form-control" id="cidade" name="txtCidade">
+                    <option value="">Selecione a cidade</option>
+                </select>
+            </div>
+
+            <div class="info-campo">
+                <button class="btn btn-success btn-lg" type="submit" onclick="validar()">Adicionar</button>
+            </div>
+        </form>
+
+        <section>
+            <table class="table table-bordered  .table-responsive">
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>Idade</th>
+                    <th>Estado</th>
+                    <th>Cidade</th>
+                </tr>
+                <tbody class="inputados"></tbody>
+            </table>
+        </section>
+    </div></br>
+    <p class="text-center">Desenvolvido por <a href="https://ccarolfreitas.com.br/">Carol Freitas</a></p>
+    <script>
+        // Javascript da inserção dos itens inputados na tabela (lista) 
+        var inputados = [
+            document.getElementById('nome'),
+            document.getElementById('idade'),
+            document.getElementById('estado'),
+            document.getElementById('cidade'),
+        ];
+
+        console.log(inputados);
+
+        document.getElementById('formulario').addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var tr = document.createElement('tr');
+
+            inputados.forEach(function (posicao) {
+                td = document.createElement('td');
+                td.textContent = posicao.value;
+                tr.appendChild(td);
+            });
+
+            var tabela = document.querySelector("table tbody");
+
+            tabela.appendChild(tr);
+
+            for (var i = 0; i <= inputados.length; i++) {
+                this[i].value = '';
+            }
+            inputados[0].focus();
+        });
+    </script>
+</body>
+
+</html>
