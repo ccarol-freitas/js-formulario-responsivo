@@ -1,3 +1,8 @@
+// Name: Carol Freitas
+// Date: 29/07/2020
+// Description: lógica para validar os campos, para que eles não venham vazios
+
+
 function validar() {
     var nome = formulario.nome.value;
     var idade = formulario.idade.value;

@@ -1,6 +1,6 @@
 // Name: Carol Freitas
 // Date: 29/07/2020
-// Description: CSS of index.html
+// Description: lógica index.html quando o campo estado for x aparecem as cidades y
 
 
 // Script para a lógica do campo estado e cidade
