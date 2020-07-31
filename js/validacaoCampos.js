@@ -30,7 +30,7 @@ function validar() {
 
     if (cidade == "") {
         alert('Por favor, preencha o campo cidade :)');
-        formulario.estadi.focus();
+        formulario.cidade.focus();
         return false;
     }
 }
