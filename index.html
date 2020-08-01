@@ -1,5 +1,6 @@
 <!-- Name: Carol Freitas
 Date: 29/07/2020
+Update: 01/08/2020
 Description: estrutura do form -->
 
 
@@ -33,13 +34,19 @@ Description: estrutura do form -->
             <div class="info-campo">
                 <label for="name">Nome Completo</label>
                 <input class="form-control" id="nome" type="text" name="txtNome" placeholder="Informe seu nome..."
-                    minlength="5" maxlength="25" required />
+                    minlength="4" maxlength="25" required />
+            </div>
+            <div id="erronome" class="alert alert-danger" role="alert">
+                Por favor, informe seu nome para que possamos continuar.
             </div>
 
             <div class="info-campo">
                 <label for="age">Idade</label>
                 <input class="form-control" id="idade" type="number" name="txtIdade" placeholder="Informe sua idade..."
                     min="18" max="90" required>
+            </div>
+            <div id="erroidade" class="alert alert-danger" role="alert">
+                Por favor, você precisa informar sua idade.
             </div>
 
             <div class="info-campo">
@@ -52,6 +59,9 @@ Description: estrutura do form -->
                     <option value="SC">Santa Catarina</option>
                 </select>
             </div>
+            <div id="erroestado" class="alert alert-danger" role="alert">
+                Por favor, para continuarmos selecione um estado.
+            </div>
 
             <div class="info-campo">
                 <label for="cidade">Cidade</label>
@@ -63,10 +73,11 @@ Description: estrutura do form -->
             <div class="info-campo">
                 <button class="btn btn-success btn-lg" type="submit" onclick="validar()">Adicionar</button>
             </div>
+
         </form>
 
-        <section>
-            <table class="table table-bordered  table-responsive">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th>Nome Completo</th>
                     <th>Idade</th>
@@ -75,9 +86,11 @@ Description: estrutura do form -->
                 </tr>
                 <tbody class="inputados"></tbody>
             </table>
-        </section>
+        </div>
+
     </div></br>
     <p class="text-center">Desenvolvido por <a href="https://ccarolfreitas.com.br/">Carol Freitas</a></p>
+
     <script>
         // Javascript da inserção dos itens inputados na tabela (lista) 
         var inputados = [
@@ -87,7 +100,7 @@ Description: estrutura do form -->
             document.getElementById('cidade'),
         ];
 
-        console.log(inputados);
+        // console.log(inputados);
 
         document.getElementById('formulario').addEventListener("submit", function (event) {
             event.preventDefault();

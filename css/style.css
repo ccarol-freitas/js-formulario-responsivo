@@ -79,8 +79,12 @@ table {
     text-align: center;
     background-color: #71C155 !important;
     color: #fff !important;
-    width: 100%;
     border: 1px solid #ccc;
+    width: 100%;
+}
+
+tbody {
+    width: 100%;
 }
 
 td {
@@ -93,9 +97,16 @@ td {
     width: 500px !important;
 }
 
+#erronome, #erroidade, #erroestado, #errocidade {
+    display: none;
+}
+
 @media (max-width: 600px) {
     .info-campo button[type="submit"] {
         position: relative;
         left: 0;
+    }
+    tbody, table {
+        font-size: 13px;
     }
 }
